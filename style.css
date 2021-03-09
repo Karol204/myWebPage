@@ -361,10 +361,21 @@ ul {
 	border:none;
 }
 
+.social-container {
+    max-width: 1200px;
+    margin: 10px auto;
+}
 
+.social-container ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 250px);
+    gap: 20px;
+    justify-content: center;
+}
 
-
-
+.social-container ul li {
+    color: #17a2b8;
+}
 
 @media screen and (max-width: 1200px) {
     .main-container {
