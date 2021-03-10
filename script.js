@@ -1,4 +1,6 @@
 const themeDots = document.querySelectorAll('.theme-dot')
+const inforBtn = document.querySelectorAll('.info')
+const crossBtn = document.querySelectorAll('.fa-times')
 
 let theme = localStorage.getItem('theme')
 
@@ -30,3 +32,19 @@ function setTheme(mode) {
     localStorage.setItem('theme', mode)
 
 }
+
+inforBtn.forEach((e) => {
+    e.addEventListener('click', function showInfo() {
+        let clickedData = this.dataset.project
+        console.log(clickedData)
+        document.getElementById(`${clickedData}`).classList.remove('inactive')
+    })
+})
+
+
+crossBtn.forEach((e) => {
+    e.addEventListener('click', function () {
+        let CrossData = this.dataset.project
+        document.getElementById(`${CrossData}`).classList.add('inactive')
+    })
+})

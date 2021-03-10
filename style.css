@@ -22,6 +22,11 @@ body *{
     transition: 0.4s;
 }
 
+
+html {
+	scroll-behavior: smooth;
+}
+
 html, body {
     padding: 0;
     margin: 0;
@@ -89,6 +94,7 @@ ul {
     -webkit-box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
 	-moz-box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
 	box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
+
 
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -286,7 +292,10 @@ ul {
     gap: 20px;
     justify-content: center;
     padding-bottom: 50px;
+
 }
+
+
 
 .post {
     border: 1px solid var(--borderColor);
@@ -308,6 +317,15 @@ ul {
     padding: 15PX;
 }
 
+.links {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.links a {
+    cursor: pointer;
+}
 .post-title {
     color: #000;
     margin: 0;
@@ -363,7 +381,7 @@ ul {
 
 .social-container {
     max-width: 1200px;
-    margin: 10px auto;
+    margin: 40px auto 60px;
 }
 
 .social-container ul {
@@ -377,9 +395,65 @@ ul {
     color: #17a2b8;
 }
 
+.project {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1;
+    top: 0;
+    left: 0;
+}
+
+.project-info {
+    position: absolute;
+    width: 600px;
+    height: 50vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 60px 40px;
+
+
+    border: 1px solid var(--borderColor);
+    -webkit-box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
+	-moz-box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
+	box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
+
+    background-color: var(--bgcMainColor);
+}
+
+.inactive {
+    display: none;
+}
+
+.fa-times {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    font-size: 30px;
+    color: var(--mainTextColor);
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media screen and (max-width: 1200px) {
     .main-container {
-        width: 95vw;
+        width: 95%;
     }
 }
 
@@ -391,9 +465,50 @@ ul {
             'leftColumn' 
             'rightColumn'
         ;
+        overflow: hidden;
     }
 
     .right-column {
         justify-content: center;
+        margin-bottom: 50px;
     }
+}
+
+@media screen and (max-width: 440px){
+	#preview-shadow{
+		max-width: 280px;
+		height: 180px;
+		padding-left: 10px;
+		padding-top: 10px;
+	}
+
+	#preview{
+		width: 280px;
+	}
+    .right-column {
+        justify-content: center;
+        margin-bottom: 50px;
+    }
+
+    #preview {
+        width: 265px;
+        padding: 10px;
+    }
+
+    .project-info {
+        position: absolute;
+        width: 90%;
+        height: 80%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 40px 30px;
+    }
+
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
 }
