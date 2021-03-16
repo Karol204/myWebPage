@@ -436,7 +436,11 @@ ul {
     cursor: pointer;
 }
 
-
+.tech-stack{
+    display: flex;
+    justify-content: space-evenly;
+    width: 80%;
+}
 
 
 
